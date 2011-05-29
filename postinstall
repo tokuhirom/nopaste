@@ -2,5 +2,7 @@
 
 echo "setup database"
 echo $USER
+ls -la $HOME/deployment.db
+cat sql/sqlite.sql
 $HOME/deployment.db < sql/sqlite.sql
 
