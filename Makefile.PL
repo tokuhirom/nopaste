@@ -6,6 +6,7 @@ author  'unknown';
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
 requires 'Amon2';
+requires 'Amon2::DBI';
 requires 'Text::Xslate';
 requires 'Text::Xslate::Bridge::TT2Like';
 requires 'Plack::Middleware::ReverseProxy';
