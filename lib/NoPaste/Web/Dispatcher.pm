@@ -13,19 +13,27 @@ any '/' => sub {
 
 post '/post' => sub {
     my ($c) = @_;
-    print STDERR "posting...\n";
 
     if (my $body = $c->req->param('body')) {
         my $entry_id = $uuid->create_str();
         $c->dbh->insert(
-            entry_id => $entry_id,
-            body  => $body,
-            ctime => time(),
+            entry => {
+                entry_id => $entry_id,
+                body     => $body,
+                ctime    => time(),
+            }
         );
         $c->redirect("/entry/$entry_id");
     } else {
         $c->redirect('/');
     }
+};
+
+get '/entry/{entry_id}' => sub {
+    my ($c, $args) = @_;
+
+    my $row = $c->dbh->selectrow_hashref(q{SELECT * FROM entry WHERE entry_id=?}, {}, $args->{entry_id});
+    return $c->render('show.tt', $row);
 };
 
 1;
