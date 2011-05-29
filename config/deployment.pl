@@ -1,4 +1,4 @@
-print "$ENV{HOME}\n$ENV{USER}\n";
+print STDERR "$ENV{HOME}\n$ENV{USER}\n";
 
 +{
     'DBI' => [
