@@ -1,4 +1,5 @@
 #!/bin/sh
 
-echo "setup db"
+echo "setup database"
 $HOME/deployment.db < sql/sqlite.sql
+
