@@ -13,6 +13,8 @@ any '/' => sub {
 
 post '/post' => sub {
     my ($c) = @_;
+    print STDERR "posting...\n";
+
     if (my $body = $c->req->param('body')) {
         my $entry_id = $uuid->create_str();
         $c->dbh->insert(
