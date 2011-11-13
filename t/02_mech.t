@@ -6,7 +6,7 @@ use Plack::Util;
 use Test::More;
 use Test::Requires 'Test::WWW::Mechanize::PSGI';
 
-my $app = Plack::Util::load_psgi 'NoPaste.psgi';
+my $app = Plack::Util::load_psgi 'app.psgi';
 if ($ENV{DEBUG}) {
     require Plack::Middleware::AccessLog;
     $app = Plack::Middleware::AccessLog->wrap($app);

@@ -5,7 +5,7 @@ use Plack::Test;
 use Plack::Util;
 use Test::More;
 
-my $app = Plack::Util::load_psgi 'NoPaste.psgi';
+my $app = Plack::Util::load_psgi 'app.psgi';
 test_psgi
     app => $app,
     client => sub {
