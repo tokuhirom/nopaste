@@ -1,16 +1,12 @@
 [% WRAPPER 'include/layout.tt' %]
 
-<hr class="space">
-
-<div class="span-24 last">
-    <div class="FormContainer">
+<div class="FormContainer">
     <form method="post" action="[% uri_for('/post') %]" class="nopaste">
-    <textarea name="body" rows="90" cols="60"></textarea>
+    <fieldset>
+    <textarea name="body" rows="20" cols="60"></textarea>
     <input type="submit" value="post" class="clean-gray" />
+    </fieldset>
     </form>
-    </div>
 </div>
-
-<hr class="space">
 
 [% END %]

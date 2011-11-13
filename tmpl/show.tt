@@ -1,11 +1,7 @@
 [% WRAPPER 'include/layout.tt' %]
 
-<hr class="space">
-
-<div class="span-24 last">
-    <div>[% body %]</div>
+<div>
+    <pre class="code">[% body %]</pre>
 </div>
-
-<hr class="space">
 
 [% END %]
