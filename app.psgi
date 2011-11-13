@@ -7,8 +7,11 @@ use Plack::Builder;
 
 builder {
     enable 'Plack::Middleware::Static',
-        path => qr{^(?:/static/|/robot\.txt$|/favicon.ico$)},
-        root => File::Spec->catdir(dirname(__FILE__), 'htdocs');
+        path => qr{^(?:/static/)},
+        root => File::Spec->catdir(dirname(__FILE__));
+    enable 'Plack::Middleware::Static',
+        path => qr{^(?:/robots\.txt|/favicon.ico)$},
+        root => File::Spec->catdir(dirname(__FILE__), 'static');
     enable 'Plack::Middleware::ReverseProxy';
     NoPaste::Web->to_app();
 };
