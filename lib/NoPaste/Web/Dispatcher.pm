@@ -8,7 +8,10 @@ my $uuid = Data::UUID->new();
 
 any '/' => sub {
     my ($c) = @_;
-    $c->render('index.tt');
+    my ($entries_cnt) = $c->dbh->selectrow_array(q{SELECT COUNT(*) FROM entry;});
+    $c->render('index.tt', {
+        entries_cnt => $entries_cnt,
+    });
 };
 
 post '/post' => sub {

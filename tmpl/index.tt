@@ -9,4 +9,8 @@
     </form>
 </div>
 
+<div>
+    [% entries_cnt %] entries available.
+</div>
+
 [% END %]
