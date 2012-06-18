@@ -7,3 +7,4 @@ nytprof.out
 nytprof/
 development.db
 test.db
+deployment.db

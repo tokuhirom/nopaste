@@ -1,0 +1,5 @@
+setup
+-----
+
+    sudo ln -s `pwd`/etc/init/nopaste.64p.org.conf /etc/init/nopaste.64p.org.conf
+    sudo ln -s `pwd`/etc/httpd/nopaste.64p.org.conf /etc/nginx/sites-enabled/nopaste.64p.org.conf
