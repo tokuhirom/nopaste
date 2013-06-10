@@ -14,6 +14,7 @@ requires 'Test::WWW::Mechanize::PSGI'      => '0';
 requires 'JSON'                            => '2.50';
 requires 'Plack::Middleware::Session'      => '0';
 requires 'Data::UUID' => 0;
+requires 'Module::Find' => 0;
 
 on 'configure' => sub {
     requires 'Module::Build';
