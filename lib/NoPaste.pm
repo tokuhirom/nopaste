@@ -11,3 +11,13 @@ sub load_config { Amon2::Config::Simple->load(shift) }
 __PACKAGE__->load_plugin(qw/DBI/);
 
 1;
+__END__
+
+=head1 NAME
+
+NoPaste - No paste things to IRC.
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
+
