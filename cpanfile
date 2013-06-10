@@ -15,9 +15,15 @@ requires 'JSON'                            => '2.50';
 requires 'Plack::Middleware::Session'      => '0';
 requires 'Data::UUID' => 0;
 requires 'Module::Find' => 0;
+requires 'Amon2::Config::Simple';
+requires 'Amon2::Web';
+requires 'Amon2::Web::Dispatcher::Lite';
+requires 'Plack::Builder';
+requires 'parent';
 
-on 'configure' => sub {
-    requires 'Module::Build';
-    requires 'Module::Build::Pluggable::GithubMeta';
-    requires 'Module::Build::Pluggable::CPANfile';
+on test => sub {
+    requires 'Plack::Middleware::AccessLog';
+    requires 'Plack::Test';
+    requires 'Plack::Util';
+    requires 'Test::Requires';
 };
